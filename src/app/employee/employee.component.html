@@ -1,0 +1,52 @@
+<div class='card'>
+  <div class='card-header'>
+    {{title}}
+  </div>
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-2'>Filter By : </div>
+      <div class='col-md-4'><input type="text" [(ngModel)]='listFilter'/></div>
+      </div>
+      <div class="row">
+        <div class='col-md-2'>
+          <h4>Filtered By : {{listFilter}}</h4>
+        </div>
+      </div>
+    </div>
+    
+    <div class="table-responsive">
+      <table class="table"
+            *ngIf='employees && employees.length'> 
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">
+              <button class='btn btn-primary' (click)="imgBtnClick()">
+                {{showImage ? 'Hide' : 'Show'}} Employee Image
+              </button>
+            </th>
+            <th scope="col">Name</th>
+            <th scope="col">ID</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Ratings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let emp of filteredEmployees'>
+            <td><img [src]="emp.myUrl" *ngIf='showImage'
+              [title]='emp.name'
+            [style.width.px]='imageWidth'
+            [style.margin.px]='imageMargin'>
+          </td>
+            <td><a [routerLink]="['/employees',emp.id]">{{emp.name|capitalize}}</a></td>
+            <td>{{emp.id}}</td>
+            <td>{{emp.designation}}</td>
+            <td>{{emp.salary | currency : 'INR'}}</td>
+            <td><app-star [rating]='emp.rating'
+              (recievedStar)="onRecievedStar($event)"></app-star></td> 
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>

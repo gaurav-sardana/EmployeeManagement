@@ -1,0 +1,26 @@
+[
+    {
+        "name": "gaurav Sardana",
+        "id": 104253,
+        "designation": "Software Engineer",
+        "salary": 20000,
+        "rating": 3.5,
+        "myUrl": "assets/Gaurav.jpg"
+    },
+    {
+        "name": "harsh Jain",
+        "id": 104254,
+        "designation": "Android Developer",
+        "salary": 30000,
+        "rating": 4.5,
+        "myUrl": "assets/harsh.jpg"
+    },
+    {
+        "name": "bikram Gupta",
+        "id": 104255,
+        "designation": "Software Engineer",
+        "salary": 20000,
+        "rating": 4.7,
+        "myUrl": "assets/bikram.jpg"
+    }
+]

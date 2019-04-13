@@ -1,0 +1,53 @@
+<div class="card" *ngIf="employee">
+  <div class="card-header">
+    {{pageTitle + " : " + (employee.name | capitalize)}}
+  </div>
+
+  <div class='card-body'>
+      <div class='row'>
+        <div class='col-md-8'>
+          <div class='row'>
+            <div class='col-md-4'>Name:</div>
+            <div class='col-md-8'>{{employee.name | capitalize}}</div>
+          </div>
+          <div class='row'>
+            <div class='col-md-4'>Id:</div>
+            <div class='col-md-8'>{{employee.id}}</div>
+          </div>
+          <div class='row'>
+            <div class='col-md-4'>Designation:</div>
+            <div class='col-md-8'>{{employee.designation}}</div>
+          </div>
+          <div class='row'>
+            <div class='col-md-4'>Salary:</div>
+            <div class='col-md-8'>{{employee.salary}}</div>
+          </div>
+          <div class='row'>
+            <div class='col-md-4'>Rating:</div>
+            <div class='col-md-8'>
+                <app-star [rating]='employee.rating'>
+                </app-star>
+            </div>
+          </div>
+        </div>
+  
+        <div class='col-md-4'>
+          <img class='center-block img-responsive'
+               [style.width.px]='200'
+               [style.margin.px]='2'
+               [src]='employee.myUrl'
+               [title]='employee.name'>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="card-footer">
+    <button class="btn btn-outline-secondary"
+        (click)="onBack()"
+        style="width:80px">
+      <i class="fa fa-chevron-left"></i>Back
+      </button>
+  </div>
+
+</div>
